@@ -9,6 +9,9 @@ import { HeaderComponent } from './shared/common/header/header.component';
 import { FooterComponent } from './shared/common/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PatientComponent } from './shared/components/patient/patient.component';
+import { DoctorDetailsComponent } from './shared/components/doctor/doctor-details/doctor-details.component';
+import { HomePatientComponent } from './shared/components/patient/home-patient/home-patient.component';
+import { PatientRecordComponent } from './shared/components/patient/patient-record/patient-record.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { PatientComponent } from './shared/components/patient/patient.component'
     ComponentsComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    DoctorDetailsComponent,
+    HomePatientComponent,
+    PatientRecordComponent
   ],
   imports: [
     BrowserModule,
