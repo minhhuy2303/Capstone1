@@ -9,6 +9,7 @@ import { HeaderComponent } from './shared/common/header/header.component';
 import { FooterComponent } from './shared/common/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PatientComponent } from './shared/components/patient/patient.component';
+import { DatLichComponent } from './shared/components/dat-lich/dat-lich.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { PatientComponent } from './shared/components/patient/patient.component'
     ComponentsComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    DatLichComponent
   ],
   imports: [
     BrowserModule,
