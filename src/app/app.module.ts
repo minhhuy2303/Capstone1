@@ -9,10 +9,8 @@ import { HeaderComponent } from './shared/common/header/header.component';
 import { FooterComponent } from './shared/common/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PatientComponent } from './shared/components/patient/patient.component';
-<<<<<<< HEAD
 import { DatLichComponent } from './shared/components/dat-lich/dat-lich.component';
 
-=======
 import { DoctorDetailsComponent } from './shared/components/doctor/doctor-details/doctor-details.component';
 import { HomePatientComponent } from './shared/components/patient/home-patient/home-patient.component';
 import { PatientRecordComponent } from './shared/components/patient/patient-record/patient-record.component';
@@ -22,7 +20,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
->>>>>>> 51fcdf59a98eae12ddc5fb7893c1836809327376
+import { RecordProfileComponent } from './shared/components/patient/patient-record/record-profile/record-profile.component';
+import { RecordHealthComponent } from './shared/components/patient/patient-record/record-health/record-health.component';
+import { RecordSavedComponent } from './shared/components/patient/patient-record/record-saved/record-saved.component';
+import { RecordBookingHistoryComponent } from './shared/components/patient/patient-record/record-booking-history/record-booking-history.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +33,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-<<<<<<< HEAD
-    DatLichComponent
-=======
+    DatLichComponent,
     DoctorDetailsComponent,
     HomePatientComponent,
-    PatientRecordComponent
->>>>>>> 51fcdf59a98eae12ddc5fb7893c1836809327376
+    PatientRecordComponent,
+    RecordProfileComponent,
+    RecordHealthComponent,
+    RecordSavedComponent,
+    RecordBookingHistoryComponent,
+    
   ],
   imports: [
     BrowserModule,
