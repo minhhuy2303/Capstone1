@@ -24,6 +24,7 @@ import { RecordProfileComponent } from './shared/components/patient/patient-reco
 import { RecordHealthComponent } from './shared/components/patient/patient-record/record-health/record-health.component';
 import { RecordSavedComponent } from './shared/components/patient/patient-record/record-saved/record-saved.component';
 import { RecordBookingHistoryComponent } from './shared/components/patient/patient-record/record-booking-history/record-booking-history.component';
+import { CategoriesListComponent } from './pages/categories-list/categories-list.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { RecordBookingHistoryComponent } from './shared/components/patient/patie
     RecordHealthComponent,
     RecordSavedComponent,
     RecordBookingHistoryComponent,
+    CategoriesListComponent,
     
   ],
   imports: [
