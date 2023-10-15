@@ -10,7 +10,7 @@ import { AdminPostComponent } from './admin-post/admin-post.component';
 @NgModule({
   declarations: [    
     AdminDashboardComponent,
-    AdminPostComponent
+    
   ],
   imports: [
     CommonModule,

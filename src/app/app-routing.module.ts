@@ -13,6 +13,7 @@ import { DatLichComponent } from './shared/components/dat-lich/dat-lich.componen
 import { DoctorHomeComponent } from './shared/components/doctor/doctor-home/doctor-home.component';
 import { AdminComponent } from './shared/components/admin/admin.component';
 import { AdminDashboardComponent } from './shared/components/admin/admin-dashboard/admin-dashboard.component';
+import { AdminPostComponent } from './shared/components/admin/admin-post/admin-post.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path:"homebs", component:DoctorHomeComponent},
   {path: "admin", component: AdminComponent, children:[
     {path:"dashboard", component: AdminDashboardComponent},
+    {path:"post", component:AdminPostComponent},
   ]}
   
 ];

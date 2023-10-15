@@ -9,7 +9,7 @@ import { RouterOutlet } from '@angular/router';
 
 @NgModule({
   declarations: [
-    PatientComponent,
+    // PatientComponent,
     RecordBookingHistoryComponent,
     RecordHealthComponent,
     RecordProfileComponent,
