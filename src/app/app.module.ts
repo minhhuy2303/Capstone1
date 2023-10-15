@@ -25,6 +25,10 @@ import { RecordHealthComponent } from './shared/components/patient/patient-recor
 import { RecordSavedComponent } from './shared/components/patient/patient-record/record-saved/record-saved.component';
 import { RecordBookingHistoryComponent } from './shared/components/patient/patient-record/record-booking-history/record-booking-history.component';
 import { CategoriesListComponent } from './pages/categories-list/categories-list.component';
+import { DoctorHomeComponent } from './shared/components/doctor/doctor-home/doctor-home.component';
+import { RouterModule } from '@angular/router';
+import { AdminComponent } from './shared/components/admin/admin.component';
+import { AdminDashboardComponent } from './shared/components/admin/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +47,9 @@ import { CategoriesListComponent } from './pages/categories-list/categories-list
     RecordSavedComponent,
     RecordBookingHistoryComponent,
     CategoriesListComponent,
+    DoctorHomeComponent,
+    AdminComponent,
+    AdminDashboardComponent,
     
   ],
   imports: [
@@ -53,7 +60,8 @@ import { CategoriesListComponent } from './pages/categories-list/categories-list
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
