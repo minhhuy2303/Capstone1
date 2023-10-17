@@ -14,12 +14,15 @@ import { DoctorHomeComponent } from './shared/components/doctor/doctor-home/doct
 import { AdminComponent } from './shared/components/admin/admin.component';
 import { AdminDashboardComponent } from './shared/components/admin/admin-dashboard/admin-dashboard.component';
 import { AdminPostComponent } from './shared/components/admin/admin-post/admin-post.component';
+import { AdminCreatePostComponent } from './shared/components/admin/admin-post/admin-create-post/admin-create-post.component';
+import { RegisterComponent } from './shared/components/register/register.component';
 
 
 const routes: Routes = [
   {path:'', pathMatch:'full', redirectTo:"home"},
   {path:"home", component:HomeComponent},
   {path:"login", component:LoginComponent},
+  {path:"register", component:RegisterComponent},
   {path:"info", component:DoctorDetailsComponent},
   {path:"user", component:PatientRecordComponent, children : [
     {path:"profile", component:RecordProfileComponent},
@@ -35,7 +38,10 @@ const routes: Routes = [
   {path: "admin", component: AdminComponent, children:[
     {path:"dashboard", component: AdminDashboardComponent},
     {path:"post", component:AdminPostComponent},
-  ]}
+    {path:"create-post", component:AdminCreatePostComponent},
+
+  ]},
+
   
 ];
 

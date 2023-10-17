@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
-
-   togglePagesMenu(){
-    let isPagesMenuOpen : true;    
+  isProfileMenuOpen = false;
+  toggleProfileMenu(){
+    this.isProfileMenuOpen = !this.isProfileMenuOpen;
   }
 }

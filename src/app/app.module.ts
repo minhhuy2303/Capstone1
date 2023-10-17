@@ -29,6 +29,12 @@ import { DoctorHomeComponent } from './shared/components/doctor/doctor-home/doct
 import { RouterModule } from '@angular/router';
 import { AdminComponent } from './shared/components/admin/admin.component';
 import { AdminDashboardComponent } from './shared/components/admin/admin-dashboard/admin-dashboard.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { AdminCreatePostComponent } from './shared/components/admin/admin-post/admin-create-post/admin-create-post.component';
+import { AdminManagePostComponent } from './shared/components/admin/admin-post/admin-manage-post/admin-manage-post.component';
+import { AdminPostComponent } from './shared/components/admin/admin-post/admin-post.component';
+import { RegisterComponent } from './shared/components/register/register.component';
+import { LoginComponent } from './shared/components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +43,8 @@ import { AdminDashboardComponent } from './shared/components/admin/admin-dashboa
     ComponentsComponent,
     HeaderComponent,
     FooterComponent,
+    LoginComponent,
+    RegisterComponent,
     HomeComponent,
     DatLichComponent,
     DoctorDetailsComponent,
@@ -49,8 +57,11 @@ import { AdminDashboardComponent } from './shared/components/admin/admin-dashboa
     CategoriesListComponent,
     DoctorHomeComponent,
     AdminComponent,
+    AdminPostComponent,
     AdminDashboardComponent,
-    
+    AdminCreatePostComponent,
+    AdminManagePostComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +72,7 @@ import { AdminDashboardComponent } from './shared/components/admin/admin-dashboa
     MatNativeDateModule,
     MatIconModule,
     BrowserAnimationsModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
