@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./record-profile.component.css']
 })
 export class RecordProfileComponent {
-
+  
 }

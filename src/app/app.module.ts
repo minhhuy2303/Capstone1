@@ -25,6 +25,16 @@ import { RecordHealthComponent } from './shared/components/patient/patient-recor
 import { RecordSavedComponent } from './shared/components/patient/patient-record/record-saved/record-saved.component';
 import { RecordBookingHistoryComponent } from './shared/components/patient/patient-record/record-booking-history/record-booking-history.component';
 import { CategoriesListComponent } from './pages/categories-list/categories-list.component';
+import { DoctorHomeComponent } from './shared/components/doctor/doctor-home/doctor-home.component';
+import { RouterModule } from '@angular/router';
+import { AdminComponent } from './shared/components/admin/admin.component';
+import { AdminDashboardComponent } from './shared/components/admin/admin-dashboard/admin-dashboard.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { AdminCreatePostComponent } from './shared/components/admin/admin-post/admin-create-post/admin-create-post.component';
+import { AdminManagePostComponent } from './shared/components/admin/admin-post/admin-manage-post/admin-manage-post.component';
+import { AdminPostComponent } from './shared/components/admin/admin-post/admin-post.component';
+import { RegisterComponent } from './shared/components/register/register.component';
+import { LoginComponent } from './shared/components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +43,8 @@ import { CategoriesListComponent } from './pages/categories-list/categories-list
     ComponentsComponent,
     HeaderComponent,
     FooterComponent,
+    LoginComponent,
+    RegisterComponent,
     HomeComponent,
     DatLichComponent,
     DoctorDetailsComponent,
@@ -43,7 +55,13 @@ import { CategoriesListComponent } from './pages/categories-list/categories-list
     RecordSavedComponent,
     RecordBookingHistoryComponent,
     CategoriesListComponent,
-    
+    DoctorHomeComponent,
+    AdminComponent,
+    AdminPostComponent,
+    AdminDashboardComponent,
+    AdminCreatePostComponent,
+    AdminManagePostComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +71,8 @@ import { CategoriesListComponent } from './pages/categories-list/categories-list
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

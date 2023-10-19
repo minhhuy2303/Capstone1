@@ -10,11 +10,19 @@ import { RecordBookingHistoryComponent } from './shared/components/patient/patie
 import { RecordSavedComponent } from './shared/components/patient/patient-record/record-saved/record-saved.component';
 import { CategoriesListComponent } from './pages/categories-list/categories-list.component';
 import { DatLichComponent } from './shared/components/dat-lich/dat-lich.component';
+import { DoctorHomeComponent } from './shared/components/doctor/doctor-home/doctor-home.component';
+import { AdminComponent } from './shared/components/admin/admin.component';
+import { AdminDashboardComponent } from './shared/components/admin/admin-dashboard/admin-dashboard.component';
+import { AdminPostComponent } from './shared/components/admin/admin-post/admin-post.component';
+import { AdminCreatePostComponent } from './shared/components/admin/admin-post/admin-create-post/admin-create-post.component';
+import { RegisterComponent } from './shared/components/register/register.component';
+
 
 const routes: Routes = [
   {path:'', pathMatch:'full', redirectTo:"home"},
   {path:"home", component:HomeComponent},
   {path:"login", component:LoginComponent},
+  {path:"register", component:RegisterComponent},
   {path:"info", component:DoctorDetailsComponent},
   {path:"user", component:PatientRecordComponent, children : [
     {path:"profile", component:RecordProfileComponent},
@@ -26,6 +34,15 @@ const routes: Routes = [
   {path:"categories", component:CategoriesListComponent},
   {path:"listDoctor", component:DatLichComponent},
   {path:"bacsi", component:DoctorDetailsComponent},
+  {path:"homebs", component:DoctorHomeComponent},
+  {path: "admin", component: AdminComponent, children:[
+    {path:"dashboard", component: AdminDashboardComponent},
+    {path:"post", component:AdminPostComponent},
+    {path:"create-post", component:AdminCreatePostComponent},
+
+  ]},
+
+  
 ];
 
 @NgModule({

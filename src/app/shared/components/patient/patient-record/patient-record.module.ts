@@ -9,11 +9,11 @@ import { RouterOutlet } from '@angular/router';
 
 @NgModule({
   declarations: [
-    PatientComponent,
-    RecordBookingHistoryComponent,
-    RecordHealthComponent,
-    RecordProfileComponent,
-    RecordSavedComponent,
+    // PatientComponent,
+    // RecordBookingHistoryComponent,
+    // RecordHealthComponent,
+    // RecordProfileComponent,
+    // RecordSavedComponent,
   ],
   imports: [
     CommonModule,
