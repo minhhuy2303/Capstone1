@@ -1,0 +1,13 @@
+
+S
+java:S1854;">Remove this useless assignment to local variable "paragraphs".(°¼².
+R
+java:S18546"<Remove this useless assignment to local variable "imageUrl".(É»æ¨
+V	java:S125"<This block of commented-out lines of code should be removed.(­ÅÚûÿÿÿÿ
+C
+java:S14816"-Remove this unused "imageUrl" local variable.(É»æ¨
+Q	java:S125:"<This block of commented-out lines of code should be removed.(ƒ·¹”
+D
+java:S1481;"/Remove this unused "paragraphs" local variable.(°¼².
+Q	java:S125<"<This block of commented-out lines of code should be removed.(ö²ÕÙ
+V	java:S125["<This block of commented-out lines of code should be removed.(ëÓŸŸøÿÿÿÿ
