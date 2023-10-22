@@ -15,20 +15,17 @@
     "@angular/common": "^16.2.0",
     "@angular/compiler": "^16.2.0",
     "@angular/core": "^16.2.0",
+    "@angular/fire": "^7.6.1",
     "@angular/forms": "^16.2.0",
     "@angular/material": "^16.2.3",
-   
-
     "@angular/material-moment-adapter": "^16.2.3",
-   
-
-  
-    "material-icons": "^1.13.11",
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "boostrap": "^2.0.0",
-    "bootstrap": "^5.0.0-alpha1",
+    "bootstrap": "^4.6.2",
+    "firebase": "^9.0.0",
+    "material-icons": "^1.13.11",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
