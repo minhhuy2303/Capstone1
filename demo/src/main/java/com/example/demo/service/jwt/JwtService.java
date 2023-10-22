@@ -1,14 +1,15 @@
 package com.example.demo.service.jwt;
 
 import com.example.demo.model.Account;
-import com.example.demo.model.JwtRequest;
-import com.example.demo.model.JwtResponse;
+import com.example.demo.model.AccountRole;
+import com.example.demo.model.Role;
+import com.example.demo.model.request.JwtRequest;
+import com.example.demo.model.response.JwtResponse;
 import com.example.demo.repository.account.IAccountRepository;
-import com.example.demo.service.account.IAccountService;
+import com.example.demo.repository.account.IAcountRoleRepository;
+import com.example.demo.repository.account.IRoleRepository;
 import com.example.demo.util.JwtUtil;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
@@ -22,11 +23,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class JwtService implements UserDetailsService {
@@ -38,6 +36,9 @@ public class JwtService implements UserDetailsService {
     private IAccountRepository iAccountRepository;
 
     @Autowired
+    private IRoleRepository iRoleRepository;
+
+    @Autowired
     private AuthenticationManager authenticationManager;
 
     public JwtResponse createJwtToken(JwtRequest jwtRequest) throws Exception{
@@ -46,8 +47,11 @@ public class JwtService implements UserDetailsService {
         authenticate(userName,userPassword);
         final UserDetails userDetails = loadUserByUsername(userName);
         String newGenerateToken = jwtUtil.generateToken(userDetails);
-       Account account =  iAccountRepository.findById(userName).get();
-       return new JwtResponse(account,newGenerateToken);
+        Account account =  iAccountRepository.findById(userName).get();
+        Role role = iRoleRepository.getRole(userName);
+        //do o day
+//        AccountRole account = iAcountRoleRepository.
+       return new JwtResponse(account,role,newGenerateToken);
     }
 
     @Override

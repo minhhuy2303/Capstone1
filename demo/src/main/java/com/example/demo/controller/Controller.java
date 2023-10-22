@@ -1,5 +1,8 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Account;
+import com.example.demo.model.AccountRole;
+import com.example.demo.service.impl.account.AccountService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
@@ -7,8 +10,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,7 +23,28 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 public class Controller {
-@GetMapping("/api")
+    @Autowired
+    AccountService accountService;
+
+    @PostMapping("/registerNewUser")
+    public AccountRole registerNewUser(@RequestBody Account account){
+        return accountService.save(account);
+    }
+
+    @GetMapping("/forAdmin")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String forAdmin(){
+        return "This URL is only  accessible to admin";
+    }
+
+    @GetMapping("/forUser")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public String forUSer(){
+        return "This URL is only  accessible to User";
+    }
+
+
+    @GetMapping("/api")
 public ResponseEntity<String> getData() {
     RestTemplate restTemplate = new RestTemplate();
     String apiUrl = "https://vi.wikipedia.org/w/api.php?action=parse&page=Hôn_mê&prop=text&formatversion=2&format=json";
@@ -90,4 +118,6 @@ public ResponseEntity<String> getData() {
 
   //  return  response;
 }
+
+
 }
