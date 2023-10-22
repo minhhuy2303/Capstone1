@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-dashboard.component.css'],
 })
 export class AdminDashboardComponent {
+  @Input() dashboard:string ='';
   showModal = false;
   toggleModal() {
     this.showModal = !this.showModal;
@@ -17,5 +18,9 @@ export class AdminDashboardComponent {
   }
   closeModalDelete(){
     this.showModalDelete = false;
+  }
+  clickedOutside():void{
+    this.showModalDelete = false;
+    this.showModal = false;
   }
 }

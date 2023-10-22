@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="mt-[20px] ">
     <div class="search_results pt-3 pb-3" style="background-color: #b1ebf8; width: 100%;">
         <div class="container-xl">
@@ -203,10 +204,112 @@
                             </mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
                           </mat-form-field>
+                          <!-- Buổi sáng -->
+                        <div class="mt-3">
+                            <h1 class="font-semibold">Buổi sáng</h1>
+                            <div class="flex flex-wrap justify-start mt-3 gap-[10px]">
+                                <div 
+                                ngClass="{{isSelected? 'time1 text-[12px] bg-blue-400 items-center':'time1 text-[12px] items-center bg-white'}}"
+                                (click)="activeButton()" 
+                                style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    07:30 - 08:00
+                                </div>
+                                <div  ngClass="{{isSelected? 'time2 text-[12px] bg-blue-400 items-center':'time2 text-[12px] items-center bg-white'}}"
+                                (click)="activeButton()" 
+                                style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    08:00 - 08:30
+                                </div>
+                                <div  ngClass="{{isSelected? 'haha text-[12px] bg-blue-400 items-center':'haha text-[12px] items-center bg-white'}}"
+                                (click)="activeButton()" 
+                                style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    08:30 - 09:00
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    09:00 - 09:30
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    09:30 - 10:00
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    10:00 - 10:30
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    10:30 - 11:00
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    11:00 - 11:30
+                                </div>
 
+                            </div>
+                        </div>
+                        <!--  -->
+                        <!-- Buổi chiều -->
+                        <div class="mt-3">
+                            <h1 class="font-semibold">Buổi Chiều</h1>
+                            <div class="flex flex-wrap justify-start mt-3 gap-[10px]">
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    13:30 - 14:00
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    14:00 - 14:30
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    14:30 - 15:00
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    15:00 - 15:30
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    15:30 - 16:00
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    16:00 - 16:30
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    16:30 - 17:00
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    17:00 - 17:30
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--  -->
+                        <!-- Buổi tối -->
+                        <div class="mt-3">
+                            <h1 class="font-semibold">Buổi tối</h1>
+                            <div class="flex flex-wrap justify-start mt-3 gap-[10px]">
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    17:30 - 18:00
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    18:00 - 18:30
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    18:30 - 19:00
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    19:00 - 19:30
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    19:30 - 20:00
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    20:00 - 20:30
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    20:30 - 21:00
+                                </div>
+                                <div class="text-[12px] items-center bg-white" style="border: 1px solid rgb(228, 232, 236); box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;border-radius: 6px; padding: 5px 12px;">
+                                    21:00 - 21:30
+                                </div>
+
+                            </div>
+                        </div>
                     </div>  
                 </div>
             </div>
         </div>
     </div>
 </div>
+<app-footer></app-footer>

@@ -1,7 +1,7 @@
-<main class="h-full overflow-y-auto">
+<main class="h-full overflow-y-auto"  clickOutside (clickOutside)="clickedOutside()">
   <div class="container px-6 mx-auto grid">
     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-      Dashboard
+      Dashboard {{dashboard}}
     </h2>
 
     <div class="w-full overflow-hidden rounded-lg shadow-xs">
@@ -34,6 +34,20 @@
               <!--body-->
               <div class="relative p-6 flex-auto">
                 <label class="block text-sm">
+                  <span class="text-gray-700 dark:text-gray-400">Họ và tên</span>
+                  <input
+                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                   
+                  />
+                </label>
+                <label class="block text-sm mt-4">
+                  <span class="text-gray-700 dark:text-gray-400">Tên đăng nhập</span>
+                  <input
+                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                   
+                  />
+                </label>
+                <label class="block text-sm mt-4">
                   <span class="text-gray-700 dark:text-gray-400">Email</span>
                   <input
                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"

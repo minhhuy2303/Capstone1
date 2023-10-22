@@ -26,7 +26,7 @@ import { RecordSavedComponent } from './shared/components/patient/patient-record
 import { RecordBookingHistoryComponent } from './shared/components/patient/patient-record/record-booking-history/record-booking-history.component';
 import { CategoriesListComponent } from './pages/categories-list/categories-list.component';
 import { DoctorHomeComponent } from './shared/components/doctor/doctor-home/doctor-home.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, provideRouter, withComponentInputBinding } from '@angular/router';
 import { AdminComponent } from './shared/components/admin/admin.component';
 import { AdminDashboardComponent } from './shared/components/admin/admin-dashboard/admin-dashboard.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
@@ -35,6 +35,7 @@ import { AdminManagePostComponent } from './shared/components/admin/admin-post/a
 import { AdminPostComponent } from './shared/components/admin/admin-post/admin-post.component';
 import { RegisterComponent } from './shared/components/register/register.component';
 import { LoginComponent } from './shared/components/login/login.component';
+import { ClickOutsideDirective } from './clickOutside.directive';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { LoginComponent } from './shared/components/login/login.component';
     AdminDashboardComponent,
     AdminCreatePostComponent,
     AdminManagePostComponent,
-    RegisterComponent
+    RegisterComponent,
+    ClickOutsideDirective,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,9 @@ import { LoginComponent } from './shared/components/login/login.component';
     BrowserAnimationsModule,
     RouterModule,
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
