@@ -17,6 +17,9 @@ import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import { ForbiddenComponent } from './shared/components/forbidden/forbidden.component';
 import { LoginComponent } from './shared/components/login/login.component';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { UserService } from './service/user/user.service';
 
 
 
@@ -40,7 +43,13 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     RouterModule
   ],
-  providers: [GetApiWikipediaService],
+  providers: [GetApiWikipediaService, AuthGuard,{
+    provide:HTTP_INTERCEPTORS,
+    useClass:AuthInterceptor,
+    multi:true
+  },
+  UserService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
