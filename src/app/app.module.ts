@@ -3,13 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { GetApiWikipediaService } from './service/wikipedia/get-api-wikipedia.service';
 import { ComponentsComponent } from './shared/components/components.component';
 import { HeaderComponent } from './shared/common/header/header.component';
 import { FooterComponent } from './shared/common/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PatientComponent } from './shared/components/patient/patient.component';
+<<<<<<< HEAD
 import { DatLichComponent } from './shared/components/dat-lich/dat-lich.component';
+=======
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {environment} from "../environments/environment";
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import { ForbiddenComponent } from './shared/components/forbidden/forbidden.component';
+import { LoginComponent } from './shared/components/login/login.component';
+import { RouterModule } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { UserService } from './service/user/user.service';
+
+>>>>>>> 2c7780f5a10092abf20e23f2b30c16f925927c51
 
 import { DoctorDetailsComponent } from './shared/components/doctor/doctor-details/doctor-details.component';
 import { HomePatientComponent } from './shared/components/patient/home-patient/home-patient.component';
@@ -53,6 +68,7 @@ import { CategoriesContentComponent } from './shared/components/categories-list/
     ComponentsComponent,
     HeaderComponent,
     FooterComponent,
+<<<<<<< HEAD
     LoginComponent,
     RegisterComponent,
     HomeComponent,
@@ -75,11 +91,17 @@ import { CategoriesContentComponent } from './shared/components/categories-list/
     ClickOutsideDirective,
     ErrorComponent,
     CategoriesContentComponent,
+=======
+    HomeComponent,
+    ForbiddenComponent,
+    LoginComponent
+>>>>>>> 2c7780f5a10092abf20e23f2b30c16f925927c51
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
+<<<<<<< HEAD
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
@@ -93,5 +115,21 @@ import { CategoriesContentComponent } from './shared/components/categories-list/
   ],
   providers: [],
   bootstrap: [AppComponent],
+=======
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    ReactiveFormsModule,
+    RouterModule
+  ],
+  providers: [GetApiWikipediaService, AuthGuard,{
+    provide:HTTP_INTERCEPTORS,
+    useClass:AuthInterceptor,
+    multi:true
+  },
+  UserService
+],
+  bootstrap: [AppComponent]
+>>>>>>> 2c7780f5a10092abf20e23f2b30c16f925927c51
 })
 export class AppModule {}

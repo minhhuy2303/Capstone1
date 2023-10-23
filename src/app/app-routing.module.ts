@@ -7,6 +7,7 @@ import {
 } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './shared/components/login/login.component';
+<<<<<<< HEAD
 import { DoctorDetailsComponent } from './shared/components/doctor/doctor-details/doctor-details.component';
 import { PatientRecordComponent } from './shared/components/patient/patient-record/patient-record.component';
 import { RecordProfileComponent } from './shared/components/patient/patient-record/record-profile/record-profile.component';
@@ -56,6 +57,20 @@ const routes: Routes = [
       { path: 'create-post', component: AdminCreatePostComponent },
     ],
   },
+=======
+import { PatientComponent } from './shared/components/patient/patient.component';
+import { ForbiddenComponent } from './shared/components/forbidden/forbidden.component';
+import { AuthGuard } from './auth/auth.guard';
+
+const routes: Routes = [
+  // {path:'', pathMatch:'full', redirectTo:"home"},
+  {path:"home", component:HomeComponent},
+  {path:"login", component:LoginComponent},
+  {path:"patient",component:PatientComponent,canActivate:[AuthGuard],data:{roles:['ROLE_USER']}},
+  {path:"forbidden",component:ForbiddenComponent},
+  {path:"admin",canActivate:[AuthGuard],data:{roles:['ROLE_ADMIN']},
+  loadChildren: () => import('./shared/components/manager_pots/pots.module').then(module => module.PotsModule)}
+>>>>>>> 2c7780f5a10092abf20e23f2b30c16f925927c51
 ];
 
 @NgModule({
