@@ -1,7 +1,4 @@
-<div
-  class="flex h-screen bg-gray-50 dark:bg-gray-900"
- 
->
+<div class="flex h-screen bg-gray-50 dark:bg-gray-900">
   <aside
     class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0"
   >
@@ -20,7 +17,7 @@
           ></span>
           <a
             class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-            routerLink="/admin/dashboard" 
+            routerLink="/admin/dashboard"
           >
             <svg
               class="w-5 h-5"
@@ -63,7 +60,7 @@
             <span class="ml-4">Bài viết</span>
           </a>
         </li>
-        <li class="relative px-6 py-3">
+        <!-- <li class="relative px-6 py-3">
           <a
             class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
             
@@ -171,13 +168,13 @@
           </a>
         </li>
         <li class="relative px-6 py-3">
-          <!-- Thêm js -->
-          <!-- <button
+          <-- Thêm js -->
+        <!-- <button
         class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
         @click="togglePagesMenu"
         aria-haspopup="true"
       > -->
-          <button
+        <!-- <button
             class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
             aria-haspopup="true"
             onclick=togglePagesMenu()
@@ -249,17 +246,17 @@
                 <a class="w-full" href="">Blank</a>
               </li>
             </ul>
-          </template>
-        </li>
+          </template> -->
+        <!-- </li> -->
       </ul>
-      <div class="px-6 my-6">
+      <!-- <div class="px-6 my-6">
         <button
           class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
         >
           Create account
           <span class="ml-2" aria-hidden="true">+</span>
         </button>
-      </div>
+      </div> -->
     </div>
   </aside>
   <div class="flex flex-col flex-1 w-full">
@@ -456,7 +453,6 @@
             > -->
             <button
               class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
-             
               (click)="toggleProfileMenu()"
             >
               <img
@@ -532,7 +528,7 @@
                 <li class="flex">
                   <a
                     class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                    href="#"
+                    (click)="logout()"
                   >
                     <svg
                       class="w-4 h-4 mr-3"
@@ -557,6 +553,6 @@
         </ul>
       </div>
     </header>
-   <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
   </div>
 </div>
