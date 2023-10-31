@@ -22,29 +22,17 @@ import org.springframework.web.client.RestTemplate;
 public class Controller {
 
     @Autowired
-    AccountService accountService;
-
-    @Autowired
-    IPostsService iPostsService;
+    private AccountService accountService;
 
     @PostMapping("/public/registerNewUser")
     public AccountRole registerNewUser(@RequestBody Account account){
         return accountService.save(account);
     }
 
-    @GetMapping("/admin/forAdmin")
-    public Role forAdmin(){
-        return new Role(1,"hello",true);
-    }
 
     @GetMapping("/user/forUser")
     public String forUSer(){
         return "This URL is only  accessible to User";
-    }
-
-    @PostMapping("/admin/add_posts")
-    public Posts addPosts(@RequestBody Posts posts){
-        return  iPostsService.addPotst(posts);
     }
 
     @GetMapping("/public ")
