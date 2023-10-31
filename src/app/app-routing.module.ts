@@ -9,8 +9,10 @@ import { AuthGuard } from './auth/auth.guard';
 const routes: Routes = [
   // {path:'', pathMatch:'full', redirectTo:"home"},
   {path:"home", component:HomeComponent},
+  {path:'', pathMatch:'full', redirectTo:"home"},
   {path:"login", component:LoginComponent},
-  {path:"patient",component:PatientComponent,canActivate:[AuthGuard],data:{roles:['ROLE_USER']}},
+  {path:"patient",component:PatientComponent},
+  // {path:"patient",component:PatientComponent,canActivate:[AuthGuard],data:{roles:['ROLE_USER']}},
   {path:"forbidden",component:ForbiddenComponent},
   {path:"admin",canActivate:[AuthGuard],data:{roles:['ROLE_ADMIN']},
   loadChildren: () => import('./shared/components/manager_pots/pots.module').then(module => module.PotsModule)}

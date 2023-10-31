@@ -10,10 +10,12 @@ import { UserService } from '../service/user/user.service';
 export class AuthGuard implements CanActivate {
   constructor(private userAutherService:UserAuthService, private route:Router,
     private userService:UserService){}
+
+    // kiem tra xem dung role ms cho vao page
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):  Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if(this.userAutherService.getToken()!== null){
+    if(this.userAutherService.getToken()!== ""){
         const role = route.data['roles'] as Array<string>
         if(role){
            const match = this.userService.roleMatch(role);

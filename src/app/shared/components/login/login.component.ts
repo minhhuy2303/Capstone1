@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit {
   submit(){
     // console.log(this.loginForm.value);
     this.userService.login(this.loginForm.value).subscribe(next =>{
+      console.log("tokennnnnnnnnnnnnnn")
       console.log(next.jwtToken);
+
       console.log(next.role)
       this.userAuth.setRoles(next.role)
       this.userAuth.setToken(next.jwtToken)

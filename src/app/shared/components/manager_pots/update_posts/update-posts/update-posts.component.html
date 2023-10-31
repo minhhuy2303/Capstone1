@@ -9,12 +9,13 @@
 <div>
   <div class="col-lg-3"></div>
   <div class="col-lg-6">
-    <form [formGroup]="potsFormCreate" (ngSubmit)="submit()">
+    <form [formGroup]="postForm" (ngSubmit)="submit()">
       <input type="text" formControlName="name" class="form-control"  placeholder="Enter title">
-      <span class="validate" *ngIf="potsFormCreate.controls['name'].hasError('required')&& potsFormCreate.controls['name'].touched">Mô tả tiêu đề không được để trống</span>
+      <span class="validate" *ngIf="postForm.controls['name'].hasError('required')&& postForm.controls['name'].touched">Mô tả tiêu đề không được để trống</span>
       <textarea formControlName="description" class="form-control" rows="10" cols="50" placeholder="Enter title"></textarea>
       <!-- <span  *ngIf="potsFormCreate.controls.description.touched && potsFormCreate.controls.description.errors?.required">Tên tài khoản không được bỏ trống</span> -->
-      <input type="file" class="form-control"  (change)="onImageSelected($event)" name="image" >
+      <input type="file" class="form-control" (change)="onImageSelected($event)" name="image" >
+      <img [src]="imageUrl" alt="Image">
       <input formControlName="title1" type="text" placeholder="Enter title">
       <br>
       <textarea formControlName="descriptionTitle1" rows="10" cols="50" placeholder="Enter descriptionTitle1"></textarea>
@@ -42,10 +43,10 @@
       <!-- <input formControlName="image5" type="file"> -->
       <br>
       <select  formControlName="topic" name="topic">
-        <option *ngFor="let i of topic" [ngValue]="i" aria-placeholder="Choose topic">{{i.name}}</option>
+        <option *ngFor="let i of topic" [ngValue]="i" aria-placeholder="">{{i.name}}</option>
       </select>
       <br>
-      <button style="background-color: blue;">Tạo mới</button>
+      <button style="background-color: blue;">Update</button>
     </form>
   </div>
   <div class="col-lg-3">

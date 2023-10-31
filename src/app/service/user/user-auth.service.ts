@@ -23,6 +23,7 @@ export class UserAuthService {
 
   //??"" giong voi toan tu 3 ngoi( neu ham duoi ma null thi no se tra ve "")
   getToken():string{
+    console.log("tokennnnnnnnnn"+localStorage.getItem("jwtToken"));
      return localStorage.getItem("jwtToken")??"";
   }
   clear(){
