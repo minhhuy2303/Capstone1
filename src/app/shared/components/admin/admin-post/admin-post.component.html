@@ -1,19 +1,174 @@
 <main class="h-full overflow-y-auto">
   <div class="container px-6 mx-auto grid">
-    <div class="flex flex-wrap gap-10" >
+    <div class="flex flex-wrap gap-10">
       <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
         Quản lí bài viết
       </h2>
-      
     </div>
-  
+
     <div class="w-full overflow-hidden rounded-lg shadow-xs">
-      <div class="mt-3"   >
-        <button  [routerLink]="['/admin/create-post']" routerLinkActive="router-link-active"  
-                class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+      <div
+        *ngIf="showModalDelete"
+        class="relative z-10"
+        aria-labelledby="modal-title"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div
+            class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+          >
+            <div
+              class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+            >
+              <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                <div class="sm:flex sm:items-start">
+                  <div
+                    class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"
+                  >
+                    <svg
+                      class="h-6 w-6 text-red-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="sm:ml-4 sm:mt-0 sm:text-left">
+                    <h3 class="text-base font-semibold leading-6 text-gray-900">
+                      Xoá bài viết
+                    </h3>
+                    <div class="">
+                      <p class="text-sm text-gray-500">
+                        Bạn có chắc chắn muốn xoá bài viết này không? Tất cả dữ
+                        liệu sẽ bị xóa vĩnh viễn. Hành động này không thể được
+                        hoàn tác.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
               >
-                Tạo bài viết
+                <button
+                  (click)="closeModalDelete()"
+                  type="button"
+                  class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                >
+                  Xoá
+                </button>
+                <button
+                  (click)="closeModalDelete()"
+                  type="button"
+                  class="inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                >
+                  Huỷ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+        *ngIf="showModalEditPost"
+      >
+        <div class="relative w-[520px] my-6 mx-auto">
+          <!--content-->
+          <div
+            class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+          >
+            <!--header-->
+
+            <div
+              class="flex items-center text-center justify-center p-3 border-b border-solid border-blueGray-200 rounded-t"
+            >
+              <h3 class="text-xl font-semibold">Chỉnh sửa thông tin</h3>
+              <button
+                class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+              >
+                <span
+                  class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none"
+                >
+                  ×
+                </span>
               </button>
+            </div>
+            <!--body-->
+            <div class="relative p-6 flex-auto">
+              <div>
+                <label
+                  for="first_name"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Tiêu đề</label
+                >
+                <input
+                  type="text"
+                  id="first_name"
+                  class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[50%] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="small-input"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Mô tả</label
+                >
+                <input
+                  type="text"
+                  id="small-input"
+                  class="w-full block w-[50%] p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                />
+              </div>
+              <!-- <angular-editor [config]="config" [(ngModel)]="htmlContent"></angular-editor> -->
+              <div>
+                <label
+                  for="small-input"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Nội dung</label
+                >
+                <textarea
+                  class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  formControllerName="reason"
+                  required
+                ></textarea>
+              </div>
+              <div class="mt-3">
+                <button
+                  (click)="closeEditPost()"
+                  class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                >
+                  Chỉnh sửa
+                </button>
+                <button
+                  (click)="closeEditPost()"
+                  class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                >
+                  Quay lại
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3">
+        <button
+          [routerLink]="['/admin/create-post']"
+          routerLinkActive="router-link-active"
+          class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+        >
+          Tạo bài viết
+        </button>
       </div>
       <!-- Quản lí bài viết -->
       <table class="w-full whitespace-no-wrap">
@@ -22,24 +177,20 @@
             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
           >
             <th class="px-4 py-3">Tên bài viết</th>
-           
+
             <th class="px-4 py-3">Ngày tạo</th>
             <th class="px-4 py-3">Hành động</th>
           </tr>
         </thead>
-        <tbody
-          class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
-        >
+        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
           <tr class="text-gray-700 dark:text-gray-400">
             <td class="px-4 py-3">
               <div class="flex items-center text-sm">
                 <!-- Avatar with inset shadow -->
-                <div
-                  class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
-                >
+                <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                   <img
                     class="object-cover w-full h-full rounded-full"
-                    src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                    src="https://cdn.hellobacsi.com/wp-content/uploads/2023/10/nho-rang-so-7-co-nguy-hiem-khong.jpg?w=828&q=75"
                     alt=""
                     loading="lazy"
                   />
@@ -49,20 +200,24 @@
                   ></div>
                 </div>
                 <div>
-                  <p class="font-semibold">Hans Burger</p>
+                  <p class="font-semibold">
+                    Nhổ răng số 7 có nguy hiểm không? Nên hay không nên nhổ răng
+                    số 7?
+                  </p>
                   <p class="text-xs text-gray-600 dark:text-gray-400">
-                    10x Developer
+                    Sức khoẻ răng miệng
                   </p>
                 </div>
               </div>
             </td>
-           
+
             <td class="px-4 py-3 text-sm">6/10/2020</td>
             <td class="px-4 py-3">
               <div class="flex items-center space-x-4 text-sm">
                 <button
                   class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                   aria-label="Edit"
+                  (click)="openEditPost()"
                 >
                   <svg
                     class="w-5 h-5"
@@ -78,6 +233,7 @@
                 <button
                   class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                   aria-label="Delete"
+                  (click)="openModalDelete()"
                 >
                   <svg
                     class="w-5 h-5"
@@ -95,13 +251,11 @@
               </div>
             </td>
           </tr>
-
-          
         </tbody>
       </table>
       <!--  -->
-     <!-- <router-outlet></router-outlet> -->
-     
+      <!-- <router-outlet></router-outlet> -->
     </div>
   </div>
 </main>
+<div *ngIf="showModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>

@@ -2,7 +2,7 @@
   <div class="flex">
     <div class="nav__right flex gap-10">
       <div class="logo" routerLink="/home">
-        <img src="../../../../assets/images/logo1.png" class="w-16" alt="">
+        <img src="../../../../assets/images/logo1.png" class="w-16" alt="" />
       </div>
       <div class="flex w-[430px] pl-4 border h-[36px] rounded-3xl">
         <input
@@ -17,13 +17,17 @@
     </div>
     <div class="nav__left">
       <ul class="flex flex-row gap-16 justify-around px-20 -b pb-4">
-        <li routerLink="/categories" class="header-menu-item">Thông tin các loại bệnh</li>
+        <li routerLink="/categories" class="header-menu-item">
+          Thông tin các loại bệnh
+        </li>
         <li routerLink="/listDoctor" class="header-menu-item">Đặt lịch hẹn</li>
         <li class="header-menu-item">Chuẩn đoán bệnh</li>
-        <li routerLink="/login" class="header-menu-item">Đăng nhập</li>
+
+        <li *ngIf="!checkLogin" routerLink="/login" class="header-menu-item">
+          Đăng nhập
+        </li>
         <li routerLink="/user/profile" class="header-menu-item">Hồ sơ</li>
       </ul>
     </div>
   </div>
-  
 </nav>

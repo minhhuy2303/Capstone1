@@ -5,16 +5,30 @@ import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 @Component({
   selector: 'app-admin-post',
   templateUrl: './admin-post.component.html',
-  styleUrls: ['./admin-post.component.css']
+  styleUrls: ['./admin-post.component.css'],
 })
-
 export class AdminPostComponent {
-  public Editor = ClassicEditor;   
-  isPost:Boolean=true;
-  showCreate(){
+  public Editor = ClassicEditor;
+  showModal = false;
+  showModalDelete = false;
+  showModalEditPost = false;
+  isPost: Boolean = true;
+  showCreate() {
     this.isPost = false;
   }
-  showManage(){
+  showManage() {
     this.isPost = true;
+  }
+  openEditPost() {
+    this.showModalEditPost = true;
+  }
+  closeEditPost() {
+    this.showModalEditPost = false;
+  }
+  openModalDelete() {
+    this.showModalDelete = !this.showModalDelete;
+  }
+  closeModalDelete() {
+    this.showModalDelete = false;
   }
 }

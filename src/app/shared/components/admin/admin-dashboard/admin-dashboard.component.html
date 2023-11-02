@@ -1,7 +1,11 @@
-<main class="h-full overflow-y-auto"  clickOutside (clickOutside)="clickedOutside()">
+<main
+  class="h-full overflow-y-auto"
+  clickOutside
+  (clickOutside)="clickedOutside()"
+>
   <div class="container px-6 mx-auto grid">
     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-      Dashboard {{dashboard}}
+      Dashboard {{ dashboard }}
     </h2>
 
     <div class="w-full overflow-hidden rounded-lg shadow-xs">
@@ -34,54 +38,26 @@
               <!--body-->
               <div class="relative p-6 flex-auto">
                 <label class="block text-sm">
-                  <span class="text-gray-700 dark:text-gray-400">Họ và tên</span>
+                  <span class="text-gray-700 dark:text-gray-400"
+                    >Họ và tên</span
+                  >
                   <input
                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                   
                   />
                 </label>
                 <label class="block text-sm mt-4">
-                  <span class="text-gray-700 dark:text-gray-400">Tên đăng nhập</span>
+                  <span class="text-gray-700 dark:text-gray-400"
+                    >Tên đăng nhập</span
+                  >
                   <input
                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                   
                   />
                 </label>
                 <label class="block text-sm mt-4">
                   <span class="text-gray-700 dark:text-gray-400">Email</span>
                   <input
                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                   
                   />
-                </label>
-                <label class="block mt-4 text-sm">
-                  <span class="text-gray-700 dark:text-gray-400">Mật khẩu</span>
-                  <input
-                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                    placeholder="***************"
-                    type="password"
-                  />
-                </label>
-                <label class="block mt-4 text-sm">
-                  <span class="text-gray-700 dark:text-gray-400">
-                   Xác nhận mật khẩu
-                  </span>
-                  <input
-                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                    placeholder="***************"
-                    type="password"
-                  />
-                </label>
-                <label class="block mt-4 text-sm">
-                  <span class="text-gray-700 dark:text-gray-400">
-                   Đăng kí với tư cách
-                  </span>
-                  <select id="role" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input ">
-                  
-                    <option value="">Bệnh nhân</option>
-                    <option value="">Bác sĩ</option>
-                   
-                  </select>
                 </label>
               </div>
               <!--footer-->
@@ -97,7 +73,6 @@
                 </button>
                 <button
                   class="text-black px-6 py-2 bg-green-500"
-                  
                   (click)="toggleModal()"
                 >
                   Save Changes
@@ -106,31 +81,73 @@
             </div>
           </div>
         </div>
-        <div *ngIf="showModalDelete" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    
-      
+        <div
+          *ngIf="showModalDelete"
+          class="relative z-10"
+          aria-labelledby="modal-title"
+          role="dialog"
+          aria-modal="true"
+        >
           <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-             
-              <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+            <div
+              class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+            >
+              <div
+                class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+              >
                 <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                   <div class="sm:flex sm:items-start">
-                    <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                      <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                    <div
+                      class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"
+                    >
+                      <svg
+                        class="h-6 w-6 text-red-600"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                        />
                       </svg>
                     </div>
-                    <div class="  sm:ml-4 sm:mt-0 sm:text-left">
-                      <h3 class="text-base font-semibold leading-6 text-gray-900" >Xoá tài khoản</h3>
+                    <div class="sm:ml-4 sm:mt-0 sm:text-left">
+                      <h3
+                        class="text-base font-semibold leading-6 text-gray-900"
+                      >
+                        Xoá tài khoản
+                      </h3>
                       <div class="">
-                        <p class="text-sm text-gray-500">Bạn có chắc chắn muốn xoá tài khoản này không? Tất cả dữ liệu sẽ bị xóa vĩnh viễn. Hành động này không thể được hoàn tác.</p>
+                        <p class="text-sm text-gray-500">
+                          Bạn có chắc chắn muốn xoá tài khoản này không? Tất cả
+                          dữ liệu sẽ bị xóa vĩnh viễn. Hành động này không thể
+                          được hoàn tác.
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                  <button (click)="closeModalDelete()" type="button" class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">Xoá</button>
-                  <button (click)="closeModalDelete()" type="button" class=" inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">Huỷ</button>
+                <div
+                  class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+                >
+                  <button
+                    (click)="closeModalDelete()"
+                    type="button"
+                    class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                  >
+                    Xoá
+                  </button>
+                  <button
+                    (click)="closeModalDelete()"
+                    type="button"
+                    class="inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                  >
+                    Huỷ
+                  </button>
                 </div>
               </div>
             </div>
@@ -170,9 +187,9 @@
                     ></div>
                   </div>
                   <div>
-                    <p class="font-semibold">Hans Burger</p>
+                    <p class="font-semibold">Nguyễn Vinh</p>
                     <p class="text-xs text-gray-600 dark:text-gray-400">
-                      10x Developer
+                      Bác sĩ
                     </p>
                   </div>
                 </div>
@@ -245,9 +262,9 @@
                     ></div>
                   </div>
                   <div>
-                    <p class="font-semibold">Jolina Angelie</p>
+                    <p class="font-semibold">Nguyễn Kim Thắng</p>
                     <p class="text-xs text-gray-600 dark:text-gray-400">
-                      Unemployed
+                      Bác sĩ
                     </p>
                   </div>
                 </div>
@@ -320,9 +337,9 @@
                     ></div>
                   </div>
                   <div>
-                    <p class="font-semibold">Sarah Curry</p>
+                    <p class="font-semibold">Vương Thái Luân</p>
                     <p class="text-xs text-gray-600 dark:text-gray-400">
-                      Designer
+                      Bác sĩ
                     </p>
                   </div>
                 </div>
@@ -395,9 +412,9 @@
                     ></div>
                   </div>
                   <div>
-                    <p class="font-semibold">Wenzel Dashington</p>
+                    <p class="font-semibold">Đỗ Khải</p>
                     <p class="text-xs text-gray-600 dark:text-gray-400">
-                      Actor
+                      Bác sĩ
                     </p>
                   </div>
                 </div>
