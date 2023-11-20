@@ -13,6 +13,7 @@ public class Appointments {
     @DateTimeFormat(pattern = "yyyy/mm/dd")
     private Date date;
     private String time;
+    private Integer isEnable;
 
     @ManyToOne
     @JoinColumn(name = "id_doctor")
@@ -25,10 +26,11 @@ public class Appointments {
     public Appointments() {
     }
 
-    public Appointments(Integer id, Date date, String time, Doctor doctor, Patients patients) {
+    public Appointments(Integer id, Date date, String time, Integer isEnable, Doctor doctor, Patients patients) {
         this.id = id;
         this.date = date;
         this.time = time;
+        this.isEnable = isEnable;
         this.doctor = doctor;
         this.patients = patients;
     }
@@ -57,6 +59,14 @@ public class Appointments {
         this.time = time;
     }
 
+    public Integer getIsEnable() {
+        return isEnable;
+    }
+
+    public void setIsEnable(Integer isEnable) {
+        this.isEnable = isEnable;
+    }
+
     public Doctor getDoctor() {
         return doctor;
     }
@@ -72,5 +82,6 @@ public class Appointments {
     public void setPatients(Patients patients) {
         this.patients = patients;
     }
+
 
 }

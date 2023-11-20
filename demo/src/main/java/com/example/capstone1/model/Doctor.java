@@ -15,10 +15,12 @@ public class Doctor {
     @DateTimeFormat(pattern = "yyyy/mm/dd")
     private Date date;
     private Integer gender;
-    private String address_1;
-    private String address_2;
+    private String houseAddress;
+    private String workAddress;
     private String phoneNumber;
+    private String strengths;
     private String email;
+    private String avatar;
     private String image;
 
     @ManyToOne
@@ -33,18 +35,30 @@ public class Doctor {
     public Doctor() {
     }
 
-    public Doctor(Integer id, String name, Date date, Integer gender, String address_1, String address_2, String phoneNumber, String email, String image, Specialist specialist, Account account) {
+    public Doctor(Integer id, String name, Date date, Integer gender, String houseAddress,
+                  String workAddress, String phoneNumber, String strengths, String email, String avatar,
+                  String image, Specialist specialist, Account account) {
         this.id = id;
         this.name = name;
         this.date = date;
         this.gender = gender;
-        this.address_1 = address_1;
-        this.address_2 = address_2;
+        this.houseAddress = houseAddress;
+        this.workAddress = workAddress;
         this.phoneNumber = phoneNumber;
+        this.strengths = strengths;
         this.email = email;
+        this.avatar = avatar;
         this.image = image;
         this.specialist = specialist;
         this.account = account;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public Integer getId() {
@@ -79,20 +93,20 @@ public class Doctor {
         this.gender = gender;
     }
 
-    public String getAddress_1() {
-        return address_1;
+    public String getHouseAddress() {
+        return houseAddress;
     }
 
-    public void setAddress_1(String address_1) {
-        this.address_1 = address_1;
+    public void setHouseAddress(String houseAddress) {
+        this.houseAddress = houseAddress;
     }
 
-    public String getAddress_2() {
-        return address_2;
+    public String getWorkAddress() {
+        return workAddress;
     }
 
-    public void setAddress_2(String address_2) {
-        this.address_2 = address_2;
+    public void setWorkAddress(String workAddress) {
+        this.workAddress = workAddress;
     }
 
     public String getPhoneNumber() {
@@ -103,12 +117,28 @@ public class Doctor {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getStrengths() {
+        return strengths;
+    }
+
+    public void setStrengths(String strengths) {
+        this.strengths = strengths;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Specialist getSpecialist() {
@@ -125,13 +155,5 @@ public class Doctor {
 
     public void setAccount(Account account) {
         this.account = account;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 }

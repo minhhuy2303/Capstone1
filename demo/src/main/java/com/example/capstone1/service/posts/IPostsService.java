@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface IPostsService {
     Posts addPotst(Posts posts);
     List<Posts> getAllPost(Integer id);
+    List<Posts> getAllPostByNameAndTopic(String name,Integer topic_id);
     Posts getPostById(Integer id);
     void deletePost(Integer id);
     void updatePost(Posts posts);

@@ -3,12 +3,15 @@ package com.example.capstone1.controller;
 import com.example.capstone1.model.Posts;
 import com.example.capstone1.model.Role;
 import com.example.capstone1.model.Topic;
-import com.example.capstone1.repository.topic.ITopicRepository;
 import com.example.capstone1.service.impl.topic.TopicService;
 import com.example.capstone1.service.posts.IPostsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -54,5 +57,18 @@ public class AdminController {
     @GetMapping("/delete_post/{id}")
     public void deletePost(@PathVariable Integer id){
          iPostsService.deletePost(id);
+    }
+
+    @GetMapping("/getAllByNameAndTopic")
+    public List<Posts> getAllPostByNameAndTopic(@RequestParam(value = "nameSearch",defaultValue = "")String name,
+                                                @RequestParam(value = "topic_id")Integer id){
+        try{
+            // fix loi dau "+"
+        String decodedName = URLDecoder.decode(name, StandardCharsets.UTF_8.toString());
+        return  iPostsService.getAllPostByNameAndTopic(decodedName,id) ;}
+        catch (UnsupportedEncodingException e){
+            e.printStackTrace();
+           return Collections.emptyList();
+        }
     }
 }

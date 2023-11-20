@@ -22,13 +22,18 @@ public interface IAddPostsRepository extends JpaRepository<Posts,Integer> {
     @Query(value="select * from posts where id = :id",nativeQuery = true)
     Posts getPostById(@Param("id")Integer id);
 
+    @Query(value="select id, name ,description,image,id_topic from posts  where name like concat('%',:name,'%') and id_topic = :topic_id",nativeQuery = true)
+    List<Posts> getAllPostByNameAndTopic(@Param("name")String name,@Param("topic_id")Integer topic_id);
+//    @Modifying
+//    @Query(value="UPDATE posts SET name = :name,description=:description,image=:image,title1= :title1,description_title1=:descriptionTitle1,image1=:image1" +
+//            ",title2 =:title2 ,description_title2=:descriptionTitle2,image2=:image2,title3=:title3,description_title3=:descriptionTitle3," +
+//            " image3=:image3, title4=:title4,description_title4=:descriptionTitle4,image4 =:image4,title5=:title5,description_title5=:descriptionTitle5" +
+//            ",image5=:image5,title6=:title6,description_title6 = :descriptionTitle6,image6=:image6,id_topic =:topic  where id =:id",nativeQuery = true)
+//    void updatePost(Integer id, String name, String description, String image, Integer topic );
+
     @Modifying
-    @Query(value="UPDATE posts SET name = :name,description=:description,image=:image,title1= :title1,description_title1=:descriptionTitle1,image1=:image1" +
-            ",title2 =:title2 ,description_title2=:descriptionTitle2,image2=:image2,title3=:title3,description_title3=:descriptionTitle3," +
-            " image3=:image3, title4=:title4,description_title4=:descriptionTitle4,image4 =:image4,title5=:title5,description_title5=:descriptionTitle5" +
-            ",image5=:image5,title6=:title6,description_title6 = :descriptionTitle6,image6=:image6,id_topic =:topic  where id =:id",nativeQuery = true)
-    void updatePost(Integer id, String name, String description, String image, String title1, String descriptionTitle1
-    , String image1, String title2, String descriptionTitle2, String image2, String title3, String descriptionTitle3,
-                     String image3, String title4, String descriptionTitle4, String image4, String title5,
-                     String descriptionTitle5, String image5, String title6, String descriptionTitle6, String image6, Integer topic );
+    @Query(value="UPDATE posts SET name = :name,description=:description,image=:image,id_topic =:topic  where id =:id",nativeQuery = true)
+    void updatePost(Integer id, String name, String description, String image, Integer topic );
+
+
 }

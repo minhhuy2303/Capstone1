@@ -11,13 +11,14 @@ public class Time {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String hour;
-
+    private Integer part;
     public Time() {
     }
 
-    public Time(Integer id, String hour) {
+    public Time(Integer id, String hour, Integer part) {
         this.id = id;
         this.hour = hour;
+        this.part = part;
     }
 
     public Integer getId() {
@@ -34,5 +35,13 @@ public class Time {
 
     public void setHour(String hour) {
         this.hour = hour;
+    }
+
+    public Integer getPart() {
+        return part;
+    }
+
+    public void setPart(Integer part) {
+        this.part = part;
     }
 }

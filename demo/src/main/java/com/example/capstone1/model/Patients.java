@@ -18,6 +18,7 @@ public class Patients {
     private String address;
     private String phoneNumber;
     private String email;
+    private String avatar;
     @OneToOne
     @JoinColumn(name = "username")
     @NotNull
@@ -26,7 +27,8 @@ public class Patients {
     public Patients() {
     }
 
-    public Patients(Integer id, String name, Date date, Integer gender, String address, String phoneNumber, String email, Account account) {
+    public Patients(Integer id, String name, Date date, Integer gender, String address, String phoneNumber,
+                    String email, String avatar, Account account) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -34,7 +36,16 @@ public class Patients {
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.avatar = avatar;
         this.account = account;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public Integer getId() {
